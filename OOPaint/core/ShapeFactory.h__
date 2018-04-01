@@ -1,0 +1,20 @@
+/*
+ * ShapeFactory.hpp
+ *
+ *  Created on: 21 Mar 2018
+ *      Author: osboxes
+ */
+
+#ifndef CORE_SHAPEFACTORY_H___
+#define CORE_SHAPEFACTORY_H___
+
+#include "Factory.hpp"
+
+class ShapeFactory : public Factory {
+public:
+	virtual ~ShapeFactory() = default;
+
+	std::shared_ptr<Shape> createShape(const std::string& name, const Coord2D& coordinates, const std::string& params) override;
+};
+
+#endif /* CORE_SHAPEFACTORY_H___ */

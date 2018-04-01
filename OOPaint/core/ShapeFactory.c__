@@ -1,0 +1,29 @@
+/*
+ * ShapeFactory.cpp
+ *
+ *  Created on: 21 Mar 2018
+ *      Author: osboxes
+ */
+
+#include "../core/ShapeFactory.hpp"
+
+#include "../core/Circle.hpp"
+#include "../core/Rectangle.hpp"
+#include "../core/SmoothMove.hpp"
+
+std::shared_ptr<Shape> ShapeFactory::createShape(const std::string& name, const Coord2D& coordinates, const std::string& params) {
+	std::shared_ptr<Shape> shape;
+
+	if ("Cirle" == name) {
+		shape =  std::make_shared<Circle>(coordinates, params);
+	}
+	else if ("Rectangle" == name) {
+		shape = std::make_shared<Rectangle>(coordinates, params);
+	}
+	else {
+		throw std::runtime_error("No such type");
+	}
+
+	shape->setMoveStrategy(new SmoothMove());
+	shape->setColor({0xff, 0xff, 0xff, 0xff});	// FIXME: hardcoded
+}
