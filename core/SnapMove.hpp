@@ -8,7 +8,7 @@
 #ifndef CORE_SNAPMOVE_HPP_
 #define CORE_SNAPMOVE_HPP_
 
-#include "../inc/MoveStrategy.hpp"
+#include "MoveStrategy.hpp"
 
 class SnapMove : public MoveStrategy {
 public:

@@ -9,8 +9,7 @@
 #define SRC_PLUGINMANAGER_HPP_
 
 #include <string>
-
-#include "../inc/ShapeRegistry.hpp"
+#include "ShapeRegistry.hpp"
 
 class PluginManager {
 public:

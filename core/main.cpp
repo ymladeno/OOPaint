@@ -14,7 +14,7 @@ int main() {
 	RegisterShapeFactory factory;
 	PluginManager pluginManager(factory);
 
-	pluginManager.loadPlugins("/home/osboxes/workspace/training_paterns/OOPaint/install/plugins/basic_shapes.so");
+	pluginManager.loadPlugins("/home/osboxes/workspace/training_paterns/OOPaint.repo/install/plugins/basic_shapes.so");
 
 	Canvas canvas = Canvas(
 			DEFAULT_WINDOW_TITLE, 
@@ -22,7 +22,7 @@ int main() {
 			DEFAULT_WINDOW_HEIGHT, 
 			DEFAULT_WINDOW_COLOR);
 
-    UIStateMachine stateMachine(std::make_shared<IdleState>(canvas, factory, nullptr));
+    UIStateMachine stateMachine(std::make_shared<IdleState>(canvas, factory));
 
 	OOPaintApp application(canvas, stateMachine);		// Dependency Injection (almost; Canvas is not Abstract...)
 	

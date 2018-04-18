@@ -8,7 +8,7 @@
 #ifndef CORE_SMOOTHMOVE_HPP_
 #define CORE_SMOOTHMOVE_HPP_
 
-#include "../inc/MoveStrategy.hpp"
+#include "MoveStrategy.hpp"
 
 class SmoothMove : public MoveStrategy {
 public:

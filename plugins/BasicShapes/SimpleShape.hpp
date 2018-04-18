@@ -8,7 +8,7 @@
 #ifndef SRC_SimpleShape_HPP_
 #define SRC_SimpleShape_HPP_
 
-#include "../inc/Shape.hpp"
+#include "Shape.hpp"
 
 class SimpleShape : public Shape {
 public:
@@ -27,6 +27,7 @@ public:
 	virtual bool containsCoordinates(const Coord2D& coord) const = 0;
 
 	virtual void setMoveStrategy(MoveStrategy* movestrategy);
+	std::set<std::shared_ptr<Shape>> getChildren() const override;
 
 protected:
 	virtual void resizeSpecific(double factor) = 0;

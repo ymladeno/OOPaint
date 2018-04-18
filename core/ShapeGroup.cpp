@@ -12,7 +12,6 @@ ShapeGroup::ShapeGroup()
 
 }
 
-
 void ShapeGroup::setColor(const SDL_Color& color) {
 	for(auto shape : group) {
 		shape->setColor(color);
@@ -46,7 +45,6 @@ void ShapeGroup::setMoveStrategy(MoveStrategy* movestrategy) {
 	}
 }
 
-
 void ShapeGroup::moveBy(const Coord2D& deltaCoord) {
 	for(auto shape : group) {
 		shape->moveBy(deltaCoord);
@@ -58,17 +56,10 @@ void ShapeGroup::add(std::shared_ptr<Shape> shape) {
 }
 
 void ShapeGroup::remove(std::shared_ptr<Shape> shape) {
-	size_t s = group.erase(shape);
+	group.erase(shape);
 }
 
-void ShapeGroup::removeall() {
-	group.clear();
+std::set<std::shared_ptr<Shape>> ShapeGroup::getChildren() const {
+	return group;
 }
 
-std::set<std::shared_ptr<Shape>>::iterator ShapeGroup::begin() const {
-	return group.begin();
-}
-
-std::set<std::shared_ptr<Shape>>::iterator ShapeGroup::end() const {
-	return group.end();
-}

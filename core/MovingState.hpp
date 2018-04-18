@@ -16,10 +16,9 @@ public:
 	MovingState(Canvas& canvas, Factory& factory, std::shared_ptr<Shape> shape);
 	virtual ~MovingState();
 
-	virtual void onMouseLeftBtnDown(const Coord2D& coords) override;
 	virtual void onMouseLeftBtnUp() override;
 	virtual void onMouseMotion(const Coord2D& coords) override;
-	//virtual void onKeyUp() override;
+
 private:
 	std::shared_ptr<Shape> shape;
 };

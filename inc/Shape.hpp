@@ -3,9 +3,10 @@
 
 #include <SDL2/SDL.h>
 #include <cassert>
-
-#include "../inc/Coord2D.hpp"
-#include "../inc/MoveStrategy.hpp"
+#include <set>
+#include <memory>
+#include "Coord2D.hpp"
+#include "MoveStrategy.hpp"
 
 class Shape {
 public:
@@ -17,6 +18,7 @@ public:
 	virtual void resize(double factor, const Coord2D& center) = 0;
 	virtual bool containsCoordinates(const Coord2D& coord) const = 0;
 	virtual void setMoveStrategy(MoveStrategy* movestrategy) = 0;
+	virtual std::set<std::shared_ptr<Shape>> getChildren() const = 0;
 };
 
 #endif /* SHAPE_HPP_ */

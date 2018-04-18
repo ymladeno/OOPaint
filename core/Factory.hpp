@@ -10,8 +10,7 @@
 
 #include <string>
 #include <memory>
-
-#include "../inc/Shape.hpp"
+#include "Shape.hpp"
 
 class Factory {
 public:

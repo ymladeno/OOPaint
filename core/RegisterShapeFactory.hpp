@@ -9,7 +9,7 @@
 #define CORE_REGISTERSHAPEFACTORY_HPP_
 
 #include <map>
-#include "../inc/ShapeRegistry.hpp"
+#include "ShapeRegistry.hpp"
 #include "Factory.hpp"
 
 class RegisterShapeFactory: public Factory, public ShapeRegistry {

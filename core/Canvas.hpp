@@ -5,7 +5,7 @@
 #include <list>
 #include <memory>
 #include "SDL2/SDL.h"
-#include "../inc/Shape.hpp"
+#include "Shape.hpp"
 
 // FIXME: concrete class, doesn't have abstract base or separate interface
 class Canvas {

@@ -13,11 +13,9 @@
 
 class GroupingState : public UIState {
 public:
-	GroupingState(Canvas& canvas, Factory& factory, std::shared_ptr<ShapeGroup> shape);
+	GroupingState(Canvas& canvas, Factory& factory, std::shared_ptr<ShapeGroup> group);
 	virtual ~GroupingState() = default;
-
 	void onMouseLeftBtnDown(const Coord2D& coords) override;
-	void onMouseRightBtnDown(const Coord2D& coords) override;
 	void onKeyUp() override;
 
 private:

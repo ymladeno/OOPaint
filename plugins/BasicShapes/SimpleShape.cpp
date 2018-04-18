@@ -40,3 +40,8 @@ void SimpleShape::resize(double factor, const Coord2D& center) {
 
 	resizeSpecific(factor);
 }
+
+std::set<std::shared_ptr<Shape>> SimpleShape::getChildren() const {
+	std::set<std::shared_ptr<Shape>> empty;
+	return empty;
+}

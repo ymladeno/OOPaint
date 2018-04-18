@@ -9,8 +9,8 @@
 #include "IdleState.hpp"
 #include "MovingState.hpp"
 
-GroupingState::GroupingState(Canvas& canvas, Factory& factory, std::shared_ptr<ShapeGroup> shape)
-: UIState(canvas, factory), group(shape) {
+GroupingState::GroupingState(Canvas& canvas, Factory& factory, std::shared_ptr<ShapeGroup> group)
+: UIState(canvas, factory), group(group) {
 }
 
 void GroupingState::onMouseLeftBtnDown(const Coord2D& coords) {
@@ -22,23 +22,10 @@ void GroupingState::onMouseLeftBtnDown(const Coord2D& coords) {
 	}
 }
 
-void GroupingState::onMouseRightBtnDown(const Coord2D& coords) {
-	auto selectedShape = canvas.getShapeAt(coords);
-
-	if (nullptr != selectedShape) {
-		group->remove(selectedShape);
-		canvas.add(selectedShape);
-	}
-}
-
 void GroupingState::onKeyUp() {
-	canvas.add(group);
-
-	int x, y;
-	SDL_GetMouseState(&x, &y);
-	Coord2D mouseCoordinates{x, y};
-
-	auto selectedShape = canvas.getShapeAt(mouseCoordinates);
-
-	changeTo(std::make_shared<IdleState>(canvas, factory, selectedShape));
+	if (group != nullptr) {
+		canvas.add(group);
+	}
+	changeTo(std::make_shared<IdleState>(canvas, factory));
 }
+
